@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            width: 300px;
+            padding: 15px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .status {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .status.active {
+            background: rgba(76, 175, 80, 0.2);
+            border: 1px solid rgba(76, 175, 80, 0.5);
+        }
+
+        .button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .button:active {
+            transform: translateY(0);
+        }
+
+        .button.primary {
+            background: rgba(76, 175, 80, 0.8);
+        }
+
+        .button.primary:hover {
+            background: rgba(76, 175, 80, 1);
+        }
+
+        .button.danger {
+            background: rgba(244, 67, 54, 0.8);
+        }
+
+        .button.danger:hover {
+            background: rgba(244, 67, 54, 1);
+        }
+
+        .button.warning {
+            background: rgba(255, 193, 7, 0.8);
+        }
+
+        .button.warning:hover {
+            background: rgba(255, 193, 7, 1);
+        }
+
+        .stats {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 12px;
+        }
+
+        .target-urls {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 12px;
+        }
+
+        .url-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 8px;
+            margin: 3px 0;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>🔍 XHR Injector</h1>
+    </div>
+
+    <div class="status active" id="status">
+        ✅ Đang hoạt động
+    </div>
+
+    <div class="stats" id="stats">
+        <strong>Thống kê:</strong><br>
+        Requests đã intercept: <span id="requestCount">0</span>
+    </div>
+
+    <div class="target-urls">
+        <strong>URLs được theo dõi:</strong>
+        <div class="url-item">/get_pc</div>
+        <div class="url-item">/rcmd_items</div>
+    </div>
+
+    <button class="button warning" id="injectAll">🔄 Inject vào tất cả tabs</button>
+    <button class="button primary" id="downloadAll">📥 Tải tất cả dữ liệu</button>
+    <button class="button" id="clearData">🗑️ Xóa dữ liệu</button>
+    <button class="button" id="openConsole">🔧 Mở Console</button>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
